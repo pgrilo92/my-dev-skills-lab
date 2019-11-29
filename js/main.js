@@ -7,14 +7,26 @@ $(function(){
     });
 
     $('#add-skill').on('click', function(){
-        let $newListText = $('input').val()
-        let $newListItem = $('.add-list').append('<div class="listAndButton"><button id="remove-skill"> X </button><li>'+ $newListText + '</li></div>')
-        listArr.push($newListItem)
+        let $showWarning = $('.warning').hide()
+        let newListText = $('input').val()
+        if(newListText !== ''){
+        let $newListItem = $('.add-list').append('<div class="listAndButton"><button id="remove-skill"> X </button><li>'+ newListText + '</li></div>')
+        listArr.push(newListText)
         console.log(listArr)
         localStorage.setItem('myList', JSON.stringify(listArr))
         $('input').val('')
+        } else{
+            $hideWarning = $('.warning').show()
+        }
+    })
+    $('input').keypress(function(evt){
+        let key = evt.which
+        if(key == 13){
+            $('#add-skill').trigger('click')
+            return false
+        }
     })
     $('ul').on('click', 'button',function(){
-        $(this).closest('li').remove()
+        $(this).closest('div').remove()
     })
 })

@@ -5,32 +5,51 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
-
 .container{
     margin-top: 200px;
     background-color: white;
-    color: orange;
-    max-width: 700px;
+    color: rgb(247, 198, 130);
+    max-width: 400px;
     text-align: center;
     
 }
-li{
+h1{
+    font-size: 30px;
+    background-color: rgb(158,194,133);
+    color: white;
+    grid-column: 4 / 6;
+}
+.listAndButton{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+}
+li{
+    list-style-type: none;
+    font-style: bold;
+    font-size: 15px;
+}
+#remove-skill{
+    background-color: rgb(210,106,105);
+    color: white;
+    height: 20px;
+    width: 20px;
+    text-align: center;
 }
 .input-btn{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
-h1{
-    font-size: 30px;
-    background-color: green;
-    color: white;
-    flex: 1;
-}
-button{
-    color: green;
+#add-skill{
+    color: rgb(158,194,133);
     background-color: white;
-    border-style: solid;
-    flex: 1;
+    border: 3px solid rgb(158,194,133);
+    height: 40px;
+    flex-grow: 1;
+    margin: 5px;
+}
+#input-bar{
+    flex-grow: 3;
+    border: 3px solid rgb(158,194,133);
+    height: 40px;
+    margin: 5px;
 }
